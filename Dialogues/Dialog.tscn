@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Dialogues/Panel.gd" type="Script" id=1]
+
+[node name="DialogBox" type="Panel"]
+margin_left = 31.0715
+margin_top = 445.814
+margin_right = 691.072
+margin_bottom = 535.814
+rect_scale = Vector2( 1.25, 1.35 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Text" type="RichTextLabel" parent="."]
+margin_left = 19.0
+margin_top = 10.0
+margin_right = 400.0
+margin_bottom = 57.0
+rect_scale = Vector2( 1.5, 1.5 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.01
+autostart = true
+
+[node name="Button" type="Button" parent="."]
+margin_left = 590.0
+margin_top = 60.0
+margin_right = 650.0
+margin_bottom = 80.0
+text = "Close"
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
